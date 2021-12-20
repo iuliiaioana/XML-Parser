@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <facts>
+        <activity category="children">
+            <title>Harry Potter Film</title>
+            <day>2022-01-10</day>
+            <organizer>CinemaCity</organizer>
+            <price>10</price>
+            <location>Bucharest</location>
+        </activity>
+        <activity category="family">
+            <title>Home Alone Film</title>
+            <day>2022-01-10</day>
+            <organizer>CinemaCity</organizer>
+            <price>20</price>
+            <location>Bucharest</location>
+        </activity>
+        <activity category="teens">
+            <title>Learning XML</title>
+            <day>2022-01-10</day>
+            <organizer>IBM</organizer>
+            <price>0</price>
+            <location>Cluj</location>
+        </activity>
+        <activity category="teens">
+            <title>Science Club</title>
+            <day>2022-01-10</day>
+            <organizer>IBM</organizer>
+            <price>0</price>
+            <location>Cluj</location>
+        </activity>
+        <activity category="teens">
+            <title>Secret Santa</title>
+            <day>2021-12-25</day>
+            <organizer>341A3</organizer>
+            <price>50</price>
+            <location>Bucharest</location>
+        </activity>
+        <activity category="teens">
+            <title>Donations Ballet Show</title>
+            <day>2021-12-25</day>
+            <organizer>Salvati Copii</organizer>
+            <price>50</price>
+            <location>Brasov</location>
+        </activity>
+        <activity category="children">
+            <title>Ice Skating</title>
+            <day>2021-12-25</day>
+            <organizer>341A3</organizer>
+            <price>30</price>
+            <location>Bucharest</location>
+        </activity>
+        <activity category="family">
+            <title>Christmas Dinner</title>
+            <day>2021-12-25</day>
+            <organizer>Salvati Copii</organizer>
+            <price>50</price>
+            <location>Bucharest</location>
+        </activity>
+        <activity category="family">
+            <title>Charity show</title>
+            <day>2021-12-25</day>
+            <organizer>Salvati Copii</organizer>
+            <price>50</price>
+            <location>Bucharest</location>
+        </activity>
+        <activity category="family">
+            <title>Handmade Market</title>
+            <day>2021-12-25</day>
+            <organizer>Salvati Copii</organizer>
+            <price>5</price>
+            <location>Bucharest</location>
+        </activity>
+    </facts>
+    <rules>
+        <!-- activities selected by day -->
+        <if>
+            <activity>
+                <title> X </title>
+                <specific_date>
+                    <day> D </day>
+                </specific_date>
+            </activity>
+        </if>
+        <then>
+            <activity_day>
+                <title> X </title>
+            </activity_day>
+        </then>
+
+        <if>
+            <activity>
+                <title> X </title>
+                <organizer> O </organizer>
+            </activity>
+        </if>
+        <then>
+            <activity_organizer>
+                <title> X </title>
+            </activity_organizer>
+        </then>
+    </rules>
+</metadata>
