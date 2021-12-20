@@ -42,7 +42,7 @@ elif option == "Activities based on category":
         st.table(df_activities)
         df_chart = df_activities.groupby(
             ['category']).size().to_frame(name='category_count')
-        st.bar_chart(df_chart)
+        st.bar_chart(df_chart, height=500)
     else:
         by_category = []
         for activity in activities:
