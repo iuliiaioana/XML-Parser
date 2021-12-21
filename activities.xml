@@ -73,7 +73,7 @@
         </activity>
     </facts>
     <rules>
-        <!-- activities selected by day -->
+        <!-- Days of activities -->
         <if>
             <activity>
                 <title> X </title>
@@ -83,11 +83,11 @@
             </activity>
         </if>
         <then>
-            <activity_day>
-                <title> X </title>
-            </activity_day>
+            <day_activity>
+                <day> X </day>
+            </day_activity>
         </then>
-
+        <!-- Organizers of activities -->
         <if>
             <activity>
                 <title> X </title>
@@ -95,9 +95,45 @@
             </activity>
         </if>
         <then>
-            <activity_organizer>
+            <organizer_activity>
+                <organizer> O </organizer>
+            </organizer_activity>
+        </then>
+
+        <!-- Free Activities -->
+        <if>
+            <activity>
                 <title> X </title>
-            </activity_organizer>
+                <price>0</price>
+            </activity>
+        </if>
+        <then>
+            <free_acitivty>
+                <title> X </title>
+            </free_acitivty>
+        </then>
+        <!-- Family activities -->
+        <if>
+            <activity category="family">
+                <title> X </title>
+            </activity>
+        </if>
+        <then>
+            <family_acitivty>
+                <title> X </title>
+            </family_acitivty>
+        </then>
+        <!-- Locations of the activities -->
+        <if>
+            <activity>
+                <title> X </title>
+                <location> L </location>
+            </activity>
+        </if>
+        <then>
+            <location_activity>
+                <location> L </location>
+            </location_activity>
         </then>
     </rules>
 </metadata>
