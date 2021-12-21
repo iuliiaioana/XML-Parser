@@ -1,4 +1,5 @@
 # XML-Parser
+   XML-Parser is an application that processes the reading of an XML document and provide with Streamlit an interface to the user application for accessing the content of the file.
 
 ## Overview App
 ![](assets/appSS.PNG)
