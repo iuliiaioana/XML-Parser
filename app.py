@@ -70,7 +70,7 @@ st.set_page_config(
 )
 st.title("🎄Activities for Christmas🎄🎁")
 show = pd.DataFrame({
-    'options1': ['All Activities', 'Activities on a day', 'Activities based on category', 'Activities based on location', 'Activities by price', 'Custom Search']
+    'options1': ['All Activities', 'Activities on a day', 'Activities based on category', 'Activities based on location', 'Activities by price', 'Activities by organizer', 'Custom Search']
 })
 
 option = st.sidebar.selectbox('Show:', show['options1'])
@@ -109,6 +109,25 @@ elif option == "Activities based on category":
             st.table(pd.DataFrame([c.__dict__ for c in by_category]))
         else:
             st.subheader('No activities for this category!')
+elif option == "Activities by organizer":
+    organizers = pd.DataFrame({
+        'options': ['All', 'CinemaCity', 'IBM', '341A3', 'Salvati Copii']})
+    organizer_selected = st.sidebar.selectbox(
+        'Select organizer:', organizers['options'])
+    if organizer_selected == 'All':
+        st.table(df_activities)
+        df_chart = df_activities.groupby(
+            ['organizer']).size().to_frame(name='organizer_count')
+        st.bar_chart(df_chart, height=500)
+    else:
+        by_organizer = []
+        for activity in activities:
+            if activity.organizer == organizer_selected:
+                by_organizer.append(activity)
+        if by_organizer:
+            st.table(pd.DataFrame([c.__dict__ for c in by_organizer]))
+        else:
+            st.subheader('No activities for this organizer!')
 elif option == "Activities by price":
     price_range = st.sidebar.slider("Choose a price range:", value=[0, 100])
     st.info("The range was: " +
